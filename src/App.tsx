@@ -1,10 +1,13 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route,  } from "react-router-dom";
+//import { BrowserRouter, Route } from "react-router-dom";
 
 import { GlobalCSS } from "./styles/global";
 
-import { Home, Wallet, Pay } from "./pages";
+import Wallet from "./conteiners/wallet-conteiner";
+//import Home from "./conteiners/home-conteiner";
+//import Pay from "./conteiners/pay-conteiner";
+
 import store from "./store";
 
 const App: React.FC = () => {

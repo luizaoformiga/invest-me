@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 export const CardPayStyles = styled.div`
   .contentWrapper {
@@ -17,7 +18,7 @@ export const CardPayStyles = styled.div`
 
     button {
       border: none;
-      background-color: #ffffff;
+      background-color: ${colors.white};
     }
 
     div {
@@ -60,7 +61,7 @@ export const CardPayStyles = styled.div`
         padding-right: 20px;
 
         &:hover {
-          color: #f44336;
+          color: ${colors.orange};
           transition: 0.3s;
         }
       }

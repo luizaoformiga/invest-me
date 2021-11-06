@@ -4,6 +4,7 @@ import { RepositoriesState } from "./ducks/repositories/types";
 
 import rootReducer from "./ducks/root-reducer";
 import rootSaga from "./ducks/root-saga";
+//import cartReducer from "./ducks/cart/actions";
 
 export interface ApplicationState {
   repositories: RepositoriesState;

@@ -1,12 +1,6 @@
 import React, { useEffect } from "react";
 
-import { connect } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
-
 import { Repository } from "../../store/ducks/repositories/types";
-import { ApplicationState } from "../../store";
-
-import { RepositoriesActions } from "../../store/ducks/repositories/actions";
 
 import { HomeDiv } from "./styles";
 import { Card } from "../../components";
@@ -22,7 +16,7 @@ interface DispatchProps {
 
 type Props = StateProps & DispatchProps;
 
-const Home: React.FC<Props> = (props) => {
+export const Home: React.FC<Props> = (props) => {
   const { repository } = props;
 
   useEffect(() => {
@@ -44,11 +38,3 @@ const Home: React.FC<Props> = (props) => {
   );
 };
 
-const mapStateToProps = (state: ApplicationState) => ({
-  repositories: state.repositories.data,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators(RepositoriesActions, dispatch);
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -22,14 +22,14 @@ export const CardPay: React.FC<StateProps> = ({ repository }) => {
   return (
     <CardPayStyles>
         <div className="contentWrapper">
-          <img src={repository?.image} alt="" />
+          <img src={repository?.image} alt={repository?.title} />
           <div>
             <h3>Camiseta description</h3>
             <p>Categoria: {repository?.sex}</p>
             <div className="conteinerButton">
               <p>Quantidade: {state}</p>
-              <button onClick={handleDown}>-</button>
-              <button onClick={handleUp}>+</button>
+              <button onClick={handleDown}>REMOVE ITEM</button>
+              <button onClick={handleUp}>ADICIONAR ITEM</button>
             </div>
           </div>
           <div className="conteinerPrices">

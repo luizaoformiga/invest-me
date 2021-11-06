@@ -9,11 +9,11 @@ interface StateProps {
 export const Card: React.FC<StateProps> = ({ repository }) => {
   return (
     <CardStyles>
-        <div className="contentWrapper">
-          <img src={repository?.image} alt="imagem" />
-          <p>{repository?.description}</p>
-          <p>R$: {repository?.price}</p>
-        </div>
+      <div className="contentWrapper">
+        <img src={repository?.image} alt={repository?.title} />
+        <p>{repository?.description}</p>
+        <p>R$: {repository?.price}</p>
+      </div>
     </CardStyles>
   );
 };

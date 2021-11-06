@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 export const PayDiv = styled.div`
   header {
-    background-color: #f44336;
-    color: #ffffff;
+    background-color: ${colors.orange};
+    color: ${colors.white};
 
     display: flex;
     text-align: center;
@@ -24,8 +25,8 @@ export const PayDiv = styled.div`
 
     button {
       border: none;
-      background-color: #ffffff;
-      color: #f44336;
+      background-color: ${colors.white};
+      color: ${colors.orange};
 
       font-size: 30px;
     }
@@ -38,30 +39,30 @@ export const PayDiv = styled.div`
     padding-bottom: 20px;
 
     .finalization {
-      background-color: #f44336;
-      color: #ffffff;
+      background-color: ${colors.orange};
+      color: ${colors.white};
       border: none;
       font-size: 30px;
       padding: 10px;
       margin-bottom: 20px;
 
       &:hover {
-        background-color: #ffffff;
-        color: #f44336;
+        background-color: ${colors.white};
+        color: ${colors.orange};
 
         transition: 0.5s;
       }
     }
 
     .eraseCar {
-      background-color: #FFFFFF;
-      color: #f44336;
+      background-color: ${colors.white};
+      color: ${colors.orange};
       border: none;
       font-size: 30px;
 
       &:hover {
-        background-color: #ffffff;
-        color: #f44336;
+        background-color: ${colors.white};
+        color: ${colors.orange};
 
         transition: 0.5s;
       }

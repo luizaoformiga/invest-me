@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 export const WalletComponent = styled.div`
   header {
-    background-color: #f44336;
-    color: #ffffff;
+    background-color: ${colors.orange};
+    color: ${colors.white};
 
     display: flex;
     text-align: center;
@@ -62,15 +63,15 @@ export const WalletComponent = styled.div`
 
     .pay {
       border: none;
-      color: #ffffff;
-      background-color: #f44336;
+      color: ${colors.white};
+      background-color: ${colors.orange};
 
       padding: 10px;
       font-size: 30px;
 
       &:hover {
-        color: #f44336;
-        background-color: #ffffff;
+        color: ${colors.orange};
+        background-color: ${colors.white};
 
         transition: 0.5s;
       }
@@ -78,8 +79,8 @@ export const WalletComponent = styled.div`
 
     .adiction {
       border: none;
-      color: #f44336;
-      background-color: #ffffff;
+      color: ${colors.orange};
+      background-color: ${colors.white};
 
       padding: 10px;
       font-size: 30px;

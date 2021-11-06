@@ -1,5 +1,3 @@
-import Home from "./Home";
-import Wallet from "./Wallet";
-import Pay from "./Pay";
-
-export { Home, Wallet, Pay };
+export * from "./Home";
+export * from "./Pay";
+export * from "./Wallet";

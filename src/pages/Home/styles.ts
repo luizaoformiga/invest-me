@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
 
 export const HomeDiv = styled.div`
   display: flex;
@@ -6,17 +7,16 @@ export const HomeDiv = styled.div`
   justify-content: space-between;
 
   header {
-    background-color: #f44336;
-    color: #ffffff;
+    background-color: ${colors.orange};
+    color: ${colors.white};
 
     display: flex;
     text-align: center;
     align-items: center;
-    
+
     justify-content: flex-end;
 
     padding: 50px;
-
 
     h2 {
       font-size: 40px;
@@ -25,7 +25,7 @@ export const HomeDiv = styled.div`
 
     div {
       display: flex;
-      justify-content: flex-end;;
+      justify-content: flex-end;
     }
   }
 
