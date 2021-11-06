@@ -1,12 +1,16 @@
 import React from "react";
-import luiz from "../../../assets/luiz.jpeg";
+import { Repository } from "../../../store/ducks/repositories/types";
 
-export const MainWallet: React.FC = () => {
+interface StateProps {
+  repository: Repository;
+}
+
+export const MainWallet: React.FC<StateProps> = ({ repository }) => {
   return (
     <main>
-      <img src={luiz} alt="" />
-      <h3>produto description</h3>
-      <h2>R$ 89,90</h2>
+      <img src={repository.image} alt="" />
+      <h3>{repository.description}</h3>
+      <h2>R$ {repository.price}</h2>
 
       <div className="description">
         <h4>Descrição</h4>

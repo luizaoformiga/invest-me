@@ -5,50 +5,46 @@ import { bindActionCreators, Dispatch } from "redux";
 
 import { Repository } from "../../store/ducks/repositories/types";
 import { ApplicationState } from "../../store";
-
 import { RepositoriesActions } from "../../store/ducks/repositories/actions";
-import { PayDiv } from "./styles";
-import { CardPay } from "../../components/CardPay";
 
+import { PayDiv } from "./styles";
+import { CardPay } from "../../components";
 import { HeaderPay, MainPay, FooterPay } from "./components";
 
-type StateProps = {
-  repository?: Repository[];
-};
+interface StateProps {
+  repositories: Repository[];
+}
 
-const Pay: React.FC<StateProps> = (props) => {
+interface DispatchProps {
+  loadRequest(): void;
+}
+
+type Props = StateProps & DispatchProps;
+
+const Pay: React.FC<Props> = (props) => {
+  const { repositories } = props;
+
   useEffect(() => {
-    document.title = "Pay";
-  }, []);
+    document.title = "INVEST.ME | PAY";
+
+    const { loadRequest } = props;
+    loadRequest();
+  }, [props]);
 
   return (
     <PayDiv>
-      <HeaderPay />  
-      <div>
-        <CardPay />
-        <CardPay />
-      </div>
-      <MainPay /> 
-      <FooterPay />   
+      <HeaderPay />
+      {repositories.map((respository, index) => (
+        <div key={index}>
+          <CardPay repository={respository} />
+          <CardPay repository={respository} />
+        </div>
+      ))}
+      <MainPay />
+      <FooterPay />
     </PayDiv>
   );
 };
-
-/*
-
-      {repository?.map((repository, index) => (
-        <main key={index}>
-          <img src={repository.image} alt="" />
-          {/*<IconButton />*
-          /*<p>{repository.title}</p>
-          <p>Categoria: {repository.sex}</p>
-          <p>Quantidade: {state}</p>
-          <button onClick={handleDown}>-</button>
-          <button onClick={handleUp}>+</button>
-          <p>R$: {repository.price}</p>
-        </main>
-      ))}
-*/
 
 const mapStateToProps = (state: ApplicationState) => ({
   repositories: state.repositories.data,

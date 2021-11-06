@@ -1,15 +1,19 @@
 import React from "react";
-import luiz from "../../assets/luiz.jpeg";
+import { Repository } from "../../store/ducks/repositories/types";
 import { CardStyles } from "./styles";
 
-export const Card: React.FC = () => {
+interface StateProps {
+  repository?: Repository;
+}
+
+export const Card: React.FC<StateProps> = ({ repository }) => {
   return (
     <CardStyles>
-      <div className="contentWrapper">
-        <img src={luiz} alt="imagem" />
-        <p>Description</p>
-        <p>R$: preço</p>
-      </div>
+        <div className="contentWrapper">
+          <img src={repository?.image} alt="imagem" />
+          <p>{repository?.description}</p>
+          <p>R$: {repository?.price}</p>
+        </div>
     </CardStyles>
   );
 };

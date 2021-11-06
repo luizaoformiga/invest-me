@@ -6,7 +6,7 @@ export const HeaderHome: React.FC = () => {
     <header>
       <h2>Produtos</h2>
       <div>
-        <a href="#!">
+        <a href="/pay">
           <AiOutlineShoppingCart style={{ fontSize: "35px", color: "#ffffff" }} />
         </a>
       </div>

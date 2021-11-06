@@ -6,18 +6,35 @@ import { ApplicationState } from "../../store";
 import { RepositoriesActions } from "../../store/ducks/repositories/actions";
 
 import { WalletComponent } from "./styles";
-
 import { FooterWallet, HeaderWallet, MainWallet } from "./components";
+import { Repository } from "../../store/ducks/repositories/types";
 
-const Wallet: React.FC = () => {
+interface StateProps {
+  repositories: Repository[];
+}
+
+interface DispatchProps {
+  loadRequest(): void;
+}
+
+type Props = StateProps & DispatchProps;
+
+const Wallet: React.FC<Props> = (props) => {
+  const { repositories } = props;
+
   useEffect(() => {
-    document.title = "Wallet";
-  }, []);
+    document.title = "INVEST.ME | WALLET";
+
+    const { loadRequest } = props;
+    loadRequest();
+  }, [props]);
 
   return (
     <WalletComponent>
       <HeaderWallet />
-      <MainWallet />
+      {repositories.map((repository, index) => (
+        <MainWallet key={index} repository={repository} />
+      ))}
       <FooterWallet />
     </WalletComponent>
   );

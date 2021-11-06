@@ -5,10 +5,11 @@ export enum RepositoriesTypes {
 }
 
 export interface Repository {
-  image: string;
-  title: string;
-  price: string;
-  sex: string;
+  image?: string;
+  title?: string;
+  price?: string;
+  sex?: string;
+  description?: string;
 }
 
 export interface RepositoriesState {

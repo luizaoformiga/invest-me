@@ -9,38 +9,35 @@ import { ApplicationState } from "../../store";
 import { RepositoriesActions } from "../../store/ducks/repositories/actions";
 
 import { HomeDiv } from "./styles";
-import { Card } from "../../components/Card";
-
+import { Card } from "../../components";
 import { HeaderHome } from "./components";
 
 type StateProps = {
   repository?: Repository[];
 };
 
-const Home: React.FC<StateProps> = (props) => {
+interface DispatchProps {
+  loadRequest(): void;
+}
+
+type Props = StateProps & DispatchProps;
+
+const Home: React.FC<Props> = (props) => {
   const { repository } = props;
 
   useEffect(() => {
-    document.title = "Home";
-  }, []);
+    document.title = "INVEST.ME | HOME";
+
+    const { loadRequest } = props;
+    loadRequest();
+  }, [props]);
 
   return (
     <HomeDiv>
-      <HeaderHome /> 
-      <main>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </main>
+      <HeaderHome />
       {repository?.map((repository, index) => (
         <main key={index}>
-          <div>
-            <img src={repository.image} alt="imagem" title="imagem" />
-            <p>{repository.title} heloo</p>
-            <p>R$: {repository.price} preço</p>
-          </div>
+          <Card repository={repository} />
         </main>
       ))}
     </HomeDiv>

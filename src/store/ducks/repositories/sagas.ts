@@ -9,7 +9,8 @@ export function* load(): Generator<
   unknown
 > {
   try {
-    const response: any = yield call(api.get, "users/diego3g/repos");
+    const response: any = yield call(api.get, "/");
+    console.log("DATA", response);
 
     yield put(loadSuccess(response.data));
   } catch (err) {

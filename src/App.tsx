@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route,  } from "react-router-dom";
 
 import { GlobalCSS } from "./styles/global";
 
@@ -10,7 +10,7 @@ import store from "./store";
 const App: React.FC = () => {
   return (
     <Provider store={store}>
-      <Home />
+      <Wallet />
       <GlobalCSS />
     </Provider>
   );
