@@ -1,18 +1,19 @@
-import { createStore, applyMiddleware, Store } from "redux";
+import { createStore, applyMiddleware, Store, AnyAction } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { RepositoriesState } from "./ducks/repositories/types";
 
 import rootReducer from "./ducks/root-reducer";
 import rootSaga from "./ducks/root-saga";
-//import cartReducer from "./ducks/cart/actions";
 
 export interface ApplicationState {
   repositories: RepositoriesState;
 }
 
+export type Application = ApplicationState;
+
 const sagaMiddleware = createSagaMiddleware();
 
-const store: Store<ApplicationState> = createStore(
+const store: Store<Application, AnyAction> = createStore(
   rootReducer,
   applyMiddleware(sagaMiddleware)
 );

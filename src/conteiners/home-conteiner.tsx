@@ -2,10 +2,10 @@ import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
 
 import { Home } from "../pages";
+import { Application } from "../store";
 import { RepositoriesActions } from "../store/ducks/repositories/actions";
-import { ApplicationState } from "../store";
 
-const mapStateToProps = (state: ApplicationState) => ({
+const mapStateToProps = (state: Application) => ({
   repositories: state.repositories.data,
 });
 

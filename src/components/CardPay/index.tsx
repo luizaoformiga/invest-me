@@ -8,37 +8,29 @@ interface StateProps {
   repository?: Repository;
 }
 
-export const CardPay: React.FC<StateProps> = ({ repository }) => {
-  const [state, setState] = useState(0);
-
-  const handleUp = (): void => {
-    setState(state + 1);
-  };
-
-  const handleDown = (): void => {
-    setState(state - 1);
-  };
-
+export const CardPay: React.FC<StateProps> = (props) => {
   return (
     <CardPayStyles>
-        <div className="contentWrapper">
-          <img src={repository?.image} alt={repository?.title} />
-          <div>
-            <h3>Camiseta description</h3>
-            <p>Categoria: {repository?.sex}</p>
-            <div className="conteinerButton">
-              <p>Quantidade: {state}</p>
-              <button onClick={handleDown}>REMOVE ITEM</button>
-              <button onClick={handleUp}>ADICIONAR ITEM</button>
-            </div>
-          </div>
-          <div className="conteinerPrices">
-            <a href="#!">
-              <AiFillDelete className="aiFillDelete" />
-            </a>
-            <strong>R$ {repository?.price}</strong>
+      <div className="contentWrapper">
+        <div className="contentImage">
+          <img src={props.repository?.image} alt={props.repository?.title} />
+        </div>
+        <div className="contentDescription">
+          <h3>{props.repository?.title}</h3>
+          <p>Category: {props.repository?.category}</p>
+          <div className="conteinerButton">
+            <p>Quantidade:</p>
+            {/*<button onClick={handleDown}>REMOVE ITEM</button>*/}
+            <button>ADICIONAR ITEM</button>
           </div>
         </div>
+        <div className="conteinerPrices">
+          <a href="#!">
+            <AiFillDelete className="aiFillDelete" />
+          </a>
+          <strong>R$ {props.repository?.price}</strong>
+        </div>
+      </div>
     </CardPayStyles>
   );
 };

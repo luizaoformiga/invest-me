@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { WalletComponent } from "./styles";
 import { FooterWallet, HeaderWallet, MainWallet } from "./components";
 import { Repository } from "../../store/ducks/repositories/types";
+import { Loading } from "../../helper";
 
 interface StateProps {
   repositories?: Repository[];
@@ -27,9 +28,9 @@ export const Wallet: React.FC<Props> = (props) => {
   return (
     <WalletComponent>
       <HeaderWallet />
-      {repositories?.map((repository, index) => (
+      {repositories ? repositories?.map((repository, index) => (
         <MainWallet key={index} repository={repository} />
-      ))}
+      )): <Loading />}
       <FooterWallet />
     </WalletComponent>
   );

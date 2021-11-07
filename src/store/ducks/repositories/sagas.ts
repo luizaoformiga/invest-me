@@ -10,7 +10,6 @@ export function* load(): Generator<
 > {
   try {
     const response: any = yield call(api.get, "/");
-    console.log("DATA", response);
 
     yield put(loadSuccess(response.data));
   } catch (err) {

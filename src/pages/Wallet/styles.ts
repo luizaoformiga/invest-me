@@ -21,16 +21,19 @@ export const WalletComponent = styled.div`
     align-items: center;
 
     margin-top: 20px;
+    margin-bottom: 100px;
 
     img {
-      width: 500px;
-      height: 500px;
+      width: 190px;
+      height: 150px;
       border-radius: 0.2rem;
     }
 
     h3 {
       font-size: 30px;
       margin-top: 10px;
+      width: 50%;
+      text-align: center;
     }
 
     h2 {
@@ -51,7 +54,8 @@ export const WalletComponent = styled.div`
       }
 
       p {
-        width: 50%;
+        width: 30%;
+        text-align: center;
       }
     }
   }
@@ -85,5 +89,8 @@ export const WalletComponent = styled.div`
       padding: 10px;
       font-size: 30px;
     }
+  }
+
+  @media screen and (max-width: 480px) {
   }
 `;

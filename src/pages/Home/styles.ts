@@ -2,9 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const HomeDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100vh;
+  width: 100%;
 
   header {
     background-color: ${colors.orange};
@@ -31,6 +30,7 @@ export const HomeDiv = styled.div`
 
   main {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;

@@ -4,72 +4,64 @@ import { colors } from "../../styles/colors";
 export const CardPayStyles = styled.div`
   .contentWrapper {
     border-bottom: 2px solid rgba(50, 50, 50, 0.22);
-    margin: 30px;
-    padding: 30px;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 
-    font-size: 20px;
-
-    img {
-      border-radius: 0.2rem;
-      max-width: 164px;
-      max-height: 164px;
+    .contentImage {
+      img {
+        width: 50px;
+        height: auto;
+      }
     }
 
-    button {
-      border: none;
-      background-color: ${colors.white};
-    }
-
-    div {
-      padding-left: 20px;
+    .contentDescription {
+      display: flex;
+      flex-direction: column;
+      
+      align-items: left;
 
       h3 {
-        padding-bottom: 30px;
-        font-size: 30px;
+        font-size: 22px;
+        margin-bottom: 4px;
       }
 
-      a {
-        padding-bottom: 10px;
+      p {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background-color: ${colors.orange};
+        color: ${colors.white};
+
+        border: none;
+        border-radius: 0.2rem;
+        box-shadow: 7px 7px 7px rgba(50, 50, 50, 0.22);
+
+        padding: 4px;
+        margin-right: 4px;
+        margin-top: 4px;
+
+        font-size: 20px;
+
+        &:hover {
+          color: ${colors.orange};
+          background-color: ${colors.white};
+          transition: 0.5s;
+        }
       }
     }
 
     .conteinerPrices {
       display: flex;
       flex-direction: column;
-      margin-left: 500px;
-      padding: 25px;
-
-      a {
-        padding-bottom: 30px;
-      }
-
-      strong {
-        font-size: 25px;
-      }
-    }
-
-    .conteinerButton {
-      display: flex;
-
-      align-items: center;
-      padding: 0;
-
-      button {
-        font-size: 40px;
-        padding-left: 20px;
-        padding-right: 20px;
-
-        &:hover {
-          color: ${colors.orange};
-          transition: 0.3s;
-        }
-      }
+      align-items: flex-start;
     }
 
     .aiFillDelete {
       font-size: 30px;
-      color: grey;
+      color: ${colors.grey};
     }
   }
 `;

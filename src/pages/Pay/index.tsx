@@ -5,6 +5,7 @@ import { Repository } from "../../store/ducks/repositories/types";
 import { PayDiv } from "./styles";
 import { CardPay } from "../../components";
 import { HeaderPay, MainPay, FooterPay } from "./components";
+import { Loading } from "../../helper";
 
 interface StateProps {
   repositories?: Repository[];
@@ -29,11 +30,11 @@ export const Pay: React.FC<Props> = (props) => {
   return (
     <PayDiv>
       <HeaderPay />
-      {repositories?.map((respository, index) => (
+      {repositories ? repositories?.map((respository, index) => (
         <div key={index}>
           <CardPay repository={respository} />
         </div>
-      ))}
+      )): <Loading />}
       <MainPay />
       <FooterPay />
     </PayDiv>

@@ -11,7 +11,7 @@ export const Card: React.FC<StateProps> = ({ repository }) => {
     <CardStyles>
       <div className="contentWrapper">
         <img src={repository?.image} alt={repository?.title} />
-        <p>{repository?.description}</p>
+        <p>{repository?.title}</p>
         <p>R$: {repository?.price}</p>
       </div>
     </CardStyles>

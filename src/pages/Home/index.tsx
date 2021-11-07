@@ -5,9 +5,10 @@ import { Repository } from "../../store/ducks/repositories/types";
 import { HomeDiv } from "./styles";
 import { Card } from "../../components";
 import { HeaderHome } from "./components";
+import { Loading } from "../../helper";
 
 type StateProps = {
-  repository?: Repository[];
+  repositories?: Repository[];
 };
 
 interface DispatchProps {
@@ -17,7 +18,7 @@ interface DispatchProps {
 type Props = StateProps & DispatchProps;
 
 export const Home: React.FC<Props> = (props) => {
-  const { repository } = props;
+  const { repositories } = props;
 
   useEffect(() => {
     document.title = "INVEST.ME | HOME";
@@ -29,12 +30,15 @@ export const Home: React.FC<Props> = (props) => {
   return (
     <HomeDiv>
       <HeaderHome />
-      {repository?.map((repository, index) => (
-        <main key={index}>
-          <Card repository={repository} />
-        </main>
-      ))}
+      <main>
+        {repositories ? (
+          repositories.map((repository, index) => (
+            <Card key={index} repository={repository} />
+          ))
+        ) : (
+          <Loading />
+        )}
+      </main>
     </HomeDiv>
   );
 };
-
