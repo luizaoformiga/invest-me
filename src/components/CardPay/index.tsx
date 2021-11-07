@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import store from "../../store";
 
 import { Repository } from "../../store/ducks/repositories/types";
 import { CardPayStyles } from "./styles";
@@ -9,6 +10,11 @@ interface StateProps {
 }
 
 export const CardPay: React.FC<StateProps> = (props) => {
+  const handleRemoveItem = (id: any): void => {
+    store.dispatch({ type: "product/remove", payload: id });
+    console.log("removes", store.getState());
+  };
+
   return (
     <CardPayStyles>
       <div className="contentWrapper">
@@ -20,14 +26,16 @@ export const CardPay: React.FC<StateProps> = (props) => {
           <p>Category: {props.repository?.category}</p>
           <div className="conteinerButton">
             <p>Quantidade:</p>
-            {/*<button onClick={handleDown}>REMOVE ITEM</button>*/}
-            <button>ADICIONAR ITEM</button>
+            <button>-</button>
+            <button>+</button>
           </div>
         </div>
         <div className="conteinerPrices">
-          <a href="#!">
-            <AiFillDelete className="aiFillDelete" />
-          </a>
+          <AiFillDelete
+            className="aiFillDelete"
+            onClick={handleRemoveItem}
+            cursor="pointer"
+          />
           <strong>R$ {props.repository?.price}</strong>
         </div>
       </div>

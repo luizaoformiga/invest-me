@@ -25,7 +25,8 @@ export const Home: React.FC<Props> = (props) => {
 
     const { loadRequest } = props;
     loadRequest();
-  }, [props]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <HomeDiv>

@@ -25,6 +25,20 @@ const reducer: Reducer<RepositoriesState> = (state = INITIAL_STATE, action) => {
         error: true,
         data: [],
       };
+    case "product/add":
+      return { ...state, data: action.payload };
+    case "product/remove":
+      const index = state.data.findIndex((item) => item.id === action.payload);
+
+      state.data.splice(index, 1);
+
+      return { ...state, data: [...state.data] };
+    case "product/erase":
+      state.data.filter((item) => item === action.payload);
+       
+      //state.data.splice(response, 1);
+
+      return { ...state, data: [...state.data] }
     default:
       return state;
   }
