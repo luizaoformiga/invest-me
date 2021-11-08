@@ -18,7 +18,7 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
         );
 
         if (productInCartIndex >= 0) {
-          draft.items[productInCartIndex].quantity++;
+          draft.items[productInCartIndex].quantity++
         } else {
           draft.items.push({
             product,
@@ -29,7 +29,7 @@ const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
         break;
       }
       case ActionTypes.addProducToCartFailure: {
-        draft.failedStockCheck.push(action.payload.productId);
+        draft?.failedStockCheck?.push(action.payload.productId);
         break;
       }
       default: {

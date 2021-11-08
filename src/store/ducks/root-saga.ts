@@ -1,12 +1,15 @@
 import { all, takeLatest, AllEffect, ForkEffect } from "redux-saga/effects";
 
+import cart from "../cart/sagas";
+
 import { RepositoriesTypes } from "./repositories/types";
 import { load } from "./repositories/sagas";
 
-export default function* rootSaga(): Generator<
-  AllEffect<ForkEffect<never>>,
-  any,
+export function* rootSaga(): Generator<
+  AllEffect<ForkEffect<never>> | AllEffect<AllEffect<ForkEffect<never>>>,
+  void,
   unknown
 > {
-  return yield all([takeLatest(RepositoriesTypes.LOAD_REQUEST, load)]);
+  yield all([takeLatest(RepositoriesTypes.LOAD_REQUEST, load)]);
+  yield all([cart]);
 }

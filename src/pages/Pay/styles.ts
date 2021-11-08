@@ -7,14 +7,14 @@ export const PayDiv = styled.div`
     color: ${colors.white};
 
     display: flex;
-    text-align: center;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     padding: 50px;
 
     h2 {
       font-size: 40px;
-      margin-left: 350px;
     }
   }
 

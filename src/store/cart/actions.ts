@@ -1,6 +1,6 @@
 import { ActionTypes, IProduct } from "./types";
 
-export function addProductToCartRequest(product: IProduct) {
+export function addProductToCartRequest(product?: IProduct) {
   return {
     type: ActionTypes.addProducToCartRequest,
     payload: {
@@ -9,7 +9,7 @@ export function addProductToCartRequest(product: IProduct) {
   };
 }
 
-export function addProductToCartSuccess(product: IProduct) {
+export function addProductToCartSuccess(product?: IProduct) {
   return {
     type: ActionTypes.addProducToCartSuccess,
     payload: {
@@ -18,7 +18,7 @@ export function addProductToCartSuccess(product: IProduct) {
   };
 }
 
-export function addProductToCartFail(productId: number) {
+export function addProductToCartFail(productId?: number) {
   return {
     type: ActionTypes.addProducToCartFailure,
     payload: {
@@ -26,9 +26,3 @@ export function addProductToCartFail(productId: number) {
     },
   };
 }
-
-export const addTotalFunctions = {
-  addProductToCartFail,
-  addProductToCartRequest,
-  addProductToCartSuccess,
-};

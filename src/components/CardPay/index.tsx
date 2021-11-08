@@ -17,27 +17,25 @@ export const CardPay: React.FC<StateProps> = (props) => {
 
   return (
     <CardPayStyles>
-      <div className="contentWrapper">
-        <div className="contentImage">
-          <img src={props.repository?.image} alt={props.repository?.title} />
+      <div className="contentImage">
+        <img src={props.repository?.image} alt={props.repository?.title} />
+      </div>
+      <div className="contentDescription">
+        <h3>{props.repository?.title}</h3>
+        <p>Category: {props.repository?.category}</p>
+        <div className="conteinerButton">
+          <p>Quantidade: {props?.repository?.id}</p>
+          <button>-</button>
+          <button>+</button>
         </div>
-        <div className="contentDescription">
-          <h3>{props.repository?.title}</h3>
-          <p>Category: {props.repository?.category}</p>
-          <div className="conteinerButton">
-            <p>Quantidade:</p>
-            <button>-</button>
-            <button>+</button>
-          </div>
-        </div>
-        <div className="conteinerPrices">
-          <AiFillDelete
-            className="aiFillDelete"
-            onClick={handleRemoveItem}
-            cursor="pointer"
-          />
-          <strong>R$ {props.repository?.price}</strong>
-        </div>
+      </div>
+      <div className="conteinerPrices">
+        <AiFillDelete
+          className="aiFillDelete"
+          onClick={handleRemoveItem}
+          cursor="pointer"
+        />
+        <strong>R$ {props.repository?.price}</strong>
       </div>
     </CardPayStyles>
   );

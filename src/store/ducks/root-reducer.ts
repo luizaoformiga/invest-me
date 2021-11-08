@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import repositories from "./repositories";
+import cart from "../cart/reducer";
 
-const rootreducer = combineReducers({
+const rootReducer = combineReducers({
   repositories,
+  cart,
 });
 
-export default rootreducer;
+export default rootReducer;

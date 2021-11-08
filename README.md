@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+<h1 align="center">
+    ReactJS com Redux
+</h1>
+<p align="center">
+  Aplicação em ReactJS para estudar gerenciamento de estado com redux
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<p align="center">
+ <a href="#sobre-o-projeto">Sobre o Projeto</a> •
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#configurações-necessárias">Configurações necessárias</a> •
+ <a href="#licença">Licença</a> •
+ <a href="#autor">Autor</a>
+</p>
 
-In the project directory, you can run:
 
-### `npm start`
+## Sobre o projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A aplicação simula uma lista de produtos de um e-commerce. Ao realizar a adição do produto no carrinho é realizada uma verificação através do gerenciamento de estado com Redux se o produto possui estoque na fake API ou se ja possui alguma quantidade adicionada.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Projeto desenvolvido para estudos seguindo as aulas da [Rocketseat](https://rocketseat.com.br)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias
 
-### `npm run build`
+Abaixo as tecnologias utilizadas para construção da aplicação web
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Axios](https://github.com/axios/axios)
+- [Redux](https://redux.js.org/)
+- [Redux Saga](https://redux-saga.js.org/)
+- [Json-server](https://github.com/typicode/json-server)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configurações necessárias
 
-### `npm run eject`
+### **Clone do projeto**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Execute o comando git clone para realizar o clone do repositório
+$ git clone https://github.com/nelsonsantosaraujo/rocketseat-redux.git
+# Entre na pasta do repositório clonado
+$ cd rocketseat-redux
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### **Iniciando o projeto**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+# Execute yarn para instalar as dependências
+$ yarn
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Antes de iniciar a aplicação inicie a fake API
+$ npx json-server server.json -p 3333
 
-## Learn More
+# Para iniciar a aplicação execute
+$ yarn start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+
+## Licença
+
+Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
+
+---
+
+### Autor
+
+Feito por Nelson Araújo 👋🏽 Entre em contato!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Nelson-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/nelsonsantosaraujo/)
+[![Gmail Badge](https://img.shields.io/badge/-nelsonsantosaraujo@hotmail.com-red?style=flat-square&link=mailto:nelsonsantosaraujo@hotmail.com)](mailto:nelsonsantosaraujo@hotmail.com)

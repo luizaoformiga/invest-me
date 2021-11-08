@@ -1,15 +1,12 @@
 import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
-export const WalletComponent = styled.div`
+export const WalletDiv = styled.div`
   header {
     background-color: ${colors.orange};
     color: ${colors.white};
 
     display: flex;
-    text-align: center;
-    align-items: center;
-
     justify-content: space-between;
 
     padding: 50px;
@@ -17,80 +14,40 @@ export const WalletComponent = styled.div`
 
   main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-top: 20px;
-    margin-bottom: 100px;
-
-    img {
-      width: 190px;
-      height: 150px;
-      border-radius: 0.2rem;
-    }
-
-    h3 {
-      font-size: 30px;
-      margin-top: 10px;
-      width: 50%;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 40px;
-      margin-top: 15px;
-    }
-
-    .description {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      margin-top: 40px;
-
-      h4 {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      p {
-        width: 30%;
-        text-align: center;
-      }
-    }
+    flex-wrap: wrap;
   }
 
-  footer {
+  article {
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    align-items: center;
+    width: 50%;
 
-    .pay {
-      border: none;
-      color: ${colors.white};
+    margin: auto;
+    padding: 50px;
+    border-radius: 0%.2rem;
+
+    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.5);
+
+    img {
+      margin: 8px;
+    }
+
+    button {
       background-color: ${colors.orange};
+      color: ${colors.white};
+      border-radius: 0.2rem;
+      border: none;
 
       padding: 10px;
-      font-size: 30px;
+      font-size: 16px;
+      margin: 8px;
 
       &:hover {
         color: ${colors.orange};
         background-color: ${colors.white};
-
-        transition: 0.5s;
+        transition: 0.3s;
       }
     }
-
-    .adiction {
-      border: none;
-      color: ${colors.orange};
-      background-color: ${colors.white};
-
-      padding: 10px;
-      font-size: 30px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
   }
 `;
