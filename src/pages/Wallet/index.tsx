@@ -4,7 +4,7 @@ import { WalletDiv } from "./styles";
 
 export const Wallet: React.FC = () => {
   useEffect(() => {
-    document.title = "INVESTME ";
+    document.title = "INVEST.ME | WALLET ";
   }, []);
 
   return (

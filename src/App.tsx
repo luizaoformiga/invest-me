@@ -11,8 +11,8 @@ const App: React.FC = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/pay" component={Pay} />
           <Route exact path="/" component={Home} />
+          <Route exact path="/pay" component={Pay} />
           <Route exact path="/wallet" component={Wallet} />
         </Switch>
       </BrowserRouter>

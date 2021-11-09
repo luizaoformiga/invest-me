@@ -24,17 +24,17 @@ let subtitle: any;
 export const FooterPay: React.FC = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  function openModal() {
+  function openModal(): void {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
+  function afterOpenModal(): void {
     subtitle.style.color = "#f00";
   }
 
-  function closeModal() {
+  function closeModal(): void {
     setIsOpen(false);
-    // window.location.href = "/";
+    window.location.href = "/";
   }
 
   const handleEraseItem = (id: any): void => {

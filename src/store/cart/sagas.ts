@@ -1,5 +1,5 @@
 import { all, takeLatest, select, call, put } from "redux-saga/effects";
-import { IState } from "..";
+import { IState } from "../";
 import {
   addProductToCartFail,
   addProductToCartRequest,

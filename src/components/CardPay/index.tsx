@@ -23,8 +23,8 @@ export const CardPay: React.FC<StateProps> = (props) => {
       <div className="contentDescription">
         <h3>{props.repository?.title}</h3>
         <p>Category: {props.repository?.category}</p>
+        <p>Quantidade: {props?.repository?.price}</p>
         <div className="conteinerButton">
-          <p>Quantidade: {props?.repository?.id}</p>
           <button>-</button>
           <button>+</button>
         </div>

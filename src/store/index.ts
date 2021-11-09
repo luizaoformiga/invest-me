@@ -21,7 +21,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
-const store: Store<IState, AnyAction> = createStore(
+const store: Store<ApplicationState, AnyAction> = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middlewares))
 );

@@ -6,7 +6,7 @@ export const CardStyles = styled.div`
     border-radius: 5px;
     box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
     padding: auto;
-    margin: 30px;
+    margin: 40px;
     
     width: 400px;
     height: 300px;
@@ -18,16 +18,22 @@ export const CardStyles = styled.div`
       cursor: pointer;
     }
 
+    h3 {
+      margin-bottom: 10px;
+      width: 50%;
+      color: ${colors.black};
+    }
+
     p {
       color: ${colors.grey};
-      font-size: 16px;
+      font-size: 20px;
       margin-bottom: 6px;
     }
 
     img {
       border-radius: 0.2rem;
       width: 140px;
-      height: 160px;
+      height: 140px;
       margin: 4px 4px 4px 4px;
     }
   }
